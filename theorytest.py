@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.options import Options
 
+CITY = "Nenagh, Ireland"
 TODAY = date.today()
 START_DATE = TODAY + timedelta(days=1)
 INTERVAL = 12
@@ -52,7 +53,7 @@ def date_changer(selector):
     printer("Today:" + TODAY.strftime("%m/%d/%Y"), bc.HEADER)
 
 
-    selector.find_element_by_xpath(address).send_keys("Nenagh, Ireland")
+    selector.find_element_by_xpath(address).send_keys(CITY)
     selector.find_element_by_xpath(start_date_xpath).send_keys(START_DATE.strftime("%m/%d/%Y"))
 
 
